@@ -8,7 +8,10 @@ save_hot_key = set([keyboard.Key.alt_l, keyboard.Key.f12])
 def save_image():
     img = ImageGrab.grabclipboard()
     filename = datetime.now().strftime('screenshot_%Y_%m_%d_%H_%M_%S')
-    img.save(f"c:\Desktop\{filename}.png")
+    try:
+        img.save(f"c:\Desktop\{filename}.png")
+    except:
+        pass
 
 def on_press(key):
     current_pressed.add(key)
